@@ -7,7 +7,7 @@ var helpers = require('handlebars-helpers');
 var fs = require('fs');
 
 
-exports.fbc = function(data, dest){
+module.exports.fbc = function(data, dest){
     data.actors = JSON.parse(fs.readFileSync('actors.json')).results;
     var opts = { };
 
