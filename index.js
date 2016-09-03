@@ -3,6 +3,8 @@ var inline = require('gulp-inline');
 var htmlmin = require('gulp-htmlmin');
 var rename = require('gulp-rename');
 var gulp = require('gulp');
+var helpers = require('handlebars-helpers');
+var fs = require('fs');
 
 
 exports.fbc = function(data, dest){
