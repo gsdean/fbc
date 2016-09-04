@@ -24,7 +24,7 @@ function fbc(data, dest){
             removeComments:true
         }))
         .pipe(rename('fb.html'))
-        .pipe(gulp.dest(dest));
+        .pipe(gulp.dest(dest || './'));
 }
 
 module.exports = fbc;
