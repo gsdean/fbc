@@ -6,8 +6,7 @@ var gulp = require('gulp');
 var helpers = require('handlebars-helpers');
 var fs = require('fs');
 
-
-module.exports.fbc = function(data, dest){
+function fbc(data, dest){
     data.actors = JSON.parse(fs.readFileSync('actors.json')).results;
     var opts = { };
 
@@ -26,4 +25,6 @@ module.exports.fbc = function(data, dest){
         }))
         .pipe(rename('fb.html'))
         .pipe(gulp.dest(dest));
-};
+}
+
+module.exports = fbc;
