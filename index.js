@@ -7,14 +7,14 @@ var helpers = require('handlebars-helpers');
 var fs = require('fs');
 
 function fbc(data, dest){
-    data.actors = JSON.parse(fs.readFileSync('actors.json')).results;
+    data.actors = JSON.parse(fs.readFileSync('./node_modules/fbc/actors.json')).results;
     var opts = { };
 
     helpers({
         handlebars: handlebars.Handlebars
     });
 
-    gulp.src('fb.hbs')
+    gulp.src('./node_modules/fbc/fb.hbs')
         .pipe(handlebars(data, opts))
         .pipe(inline())
         .pipe(htmlmin({
